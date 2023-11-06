@@ -9,10 +9,11 @@ This repository is to setup test automation framework for running automated test
 * Install java and maven
 
 ##### TechStack
-* Java
+* Java 11
 * Selenium
 * TestNG
 * RestAssured
+* Maven  3.9.5
 * Extent Reports    
  
 ##### Framework Details

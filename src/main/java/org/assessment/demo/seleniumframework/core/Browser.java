@@ -88,10 +88,16 @@ public class Browser {
 		WebDriver browser = null;
 		String platform = config.get("platform");
 		String browserName = config.get("browserName");
+		String os = System.getProperty("os.name");
+		System.out.println("OperatingSystem used is::" + os);
 
 		try {
 			if (CHROME.equalsIgnoreCase(config.get("browserName"))) {
-				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") +  File.separator + "driver" +  File.separator + "chromedriver");
+				
+				if (os.equalsIgnoreCase("Mac OS X") || os.contains("Mac"))
+				 System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") +  File.separator + "driver" +  File.separator + "chromedriver");
+				else
+					 System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") +  File.separator + "driver" +  File.separator + "chromedriver.exe");
 				browser = new ChromeDriver();
 
 			} else if (FIREFOX.equalsIgnoreCase(config.get("browserName"))) {
