@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" > -->
+
+<suite name="Tech Assessment" parallel="tests" thread-count="1">
+
+	<listeners>
+		<listener class-name="org.assessment.demo.common.SuiteData" />
+		<listener
+			class-name="org.assessment.demo.common.ExecutionData" />
+
+
+	</listeners>
+
+	<test name="UITest">
+		<parameter name="browser" value="WINDOWS_CHROME" />
+		<classes>
+			<class name="org.assessment.demo.browsertests.Contacts" />
+		</classes>
+	</test>
+	<test name="APITest">
+		<classes>
+			<class name="org.assessment.demo.apitests.ContactsAPI" />
+		</classes>
+	</test>
+
+	<parameter name="environment" value="test" />
+	<parameter name="component" value="sanity" />
+	<parameter name="platform" value="WINDOWS_CHROME" />
+	<parameter name="browserName" value="CHROME" />
+	<parameter name="headless" value="false" />
+	<parameter name="envFile" value="test" />
+
+
+
+
+</suite>

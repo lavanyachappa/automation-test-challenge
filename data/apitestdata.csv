@@ -1,0 +1,4 @@
+TestName,TestDescription,status,payload,expected_firstName,expected_lastName
+"POST_Login","Login using POST",200,"{""email"":""firstname1.lastname1@gmail.com"",""password"":""PASSWORD""}",,
+"GET_Get Contacts","Read contacts using GET",200,,,
+"POST_CreateContact","Create a new contact",201,"{""firstName"":""AutoFN_RANDOM"",""lastName"":""AutoLN_RANDOM""}",AutoFN_RANDOM,AutoLN_RANDOM

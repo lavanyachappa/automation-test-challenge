@@ -1,27 +1,57 @@
-# Automation Test Challenge Instructions
+#### Automation Setup
+This repository is to setup test automation framework for running automated tests  for frontend and backend applications using Selenium + TestNg + Rest Assured
 
-Write an automation test script that:
- 1. Select a site a that has an a modern (REST) api and modern frontend (can be a local project as long as it's packaged / started with the scrips)
- 2. Create a ui automation script that has at least 3 steps. E.g. login, navigate and search.
- 3. Create an API automation test that performs the steps listed above just via api calls.
+##### Assumptions
+* UI tests are tested on Chrome latest version 119.0.6045.105 because chromedriver used for this project supports this chrome version only
 
-## General Approach and Assumptions
+##### Pre-requisites
 
-- Solution should be implemented in a selenium based framework
-- Solution should be executed by a single bash script and not via a UI
-- The solution should be executed on any OS that has bash, don't tie it to OS specific dependencies
-- Ensure script pulls in any dependencies required to execute or clearly document what packages+versions need to be installed
+* Install java and maven
 
-## Criteria
+##### TechStack
+* Java
+* Selenium
+* TestNG
+* RestAssured
+* Extent Reports    
+ 
+##### Framework Details
 
-Your work will be evaluated primarily on:
+1. Hybrid Framework
+2. Leveraged POM framework for selenium
+3. Java Factory Design Pattern for loose couple, reusuability and robust
+4. TestNG data provider for Test Data Driven
+5. RestAssured For API tests
+6. Extent Report For Reporting
 
-- Consistency of coding style and script structure
-- Clean code and re-useability
+##### Package information
+ ****src/main/java****
+1. org.assessment.demo.common  - Classes to access the utilities and properties by the tests
+2. org.assessment.demo.restassured - For executing APIs using rest assured jar
+3. org.assessment.demo.seleniumframework.core - For Browser Test Support using Selenium
+4. org.assessment.demo.utils - Configuraiton.Reporting,Generic Utilities files
+
+ ****src/test/java****
+1. org.assessment.demo.common - Test and Suite Listeners and TestNG Test data Provider and API,UI Base Test Classes
+2. org.assessment.demo.library - Actions on Page Objects
+3. org.assessment.demo.module - Business Logic is handled by using Library package for reusuabaility and robust.
+4. org.assessment.demo.apitests - Contains API automated tests
+5. org.assessment.demo.browsertests - Contains Browser automated tests
 
 
-## How to submit your work
+##### Steps to Execute Tests from command line**
 
- 1. Fork this project on github.
- 2. Update this README.md file with instructions on how to build/test/run your script(s).
- 3. When you're finished, send us the URL of your public repository.
+ 1. From command line, clone the repo
+ 2. Run "mvn test"
+ 3. TestNG suite xml automation-test-challenge/testsuites/environment/test is executed
+ 4. Extent Report is generated in path rootdir/extent-reports/extent-report.html.
+
+##### CI/CD Integration
+
+* This repo is designed with interoperability to integrate with  Github/BitBucket/Gitlab or jenkins pipeline to run tests in CI/CD pipeline
+
+##### Outcomes
+1. Create a robust Framework to support UI and API tests
+2. Reusuability and fast automation Development for E2E usecases
+3. Loosely coupled with less Maintenance overhead
+
